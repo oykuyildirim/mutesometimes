@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mute Sometimes</string>
+    <string name ="mute_time_dec">"Mute Time Detection"</string>
+    <string name ="mute_loc_dec">"Mute Location Detection"</string>
+    <string name="turkish_button">"Turkish"</string>
+    <string name="add_time_button">"Set Time"</string>
+    <string name="add_this_loc">"Set Current Location"</string>
+    <string name="add_loc">Set Location</string>
+    <string name="radio_loc">Location List</string>
+    <string name="radio_time">Time List</string>
+    <string name="list_empty">List is Empty</string>
+    <string name="progressBar">Services are Loading ... </string>
+    <string name="slogan">Let Silence be your voice !</string>
+    <string name="title_home">Lists</string>
+    <string name="title_dashboard">Time Setting</string>
+    <string name="title_notifications">Location Setting</string>
+    <string name="current_loc">Current Location</string>
+    <string name="manuel_loc">Enter Manuelly</string>
+    <string name="title">Location Title</string>
+    <string name="longtitude">Longtitude Value</string>
+    <string name="latitude">Latitude Value</string>
+    <string name="settings">Settings</string>
+
+
+
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.LocationSet.LocationSetFragment">
+
+    <RadioGroup
+        android:id="@+id/Inputradio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/automatic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingRight="80dp"
+            android:text="@string/current_loc" />
+
+        <RadioButton
+            android:id="@+id/manuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/manuel_loc" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/locationbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_this_loc" />
+
+    <EditText
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/longtitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/longtitude"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/latitude"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/setLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_loc" />
+
+</LinearLayout>

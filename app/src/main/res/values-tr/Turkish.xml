@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mute Sometimes</string>
+    <string name ="mute_time_dec">"Sessiz Zaman Tespiti"</string>
+    <string name ="mute_loc_dec">"Sessiz Konum Tespiti"</string>
+    <string name="turkish_button">"Türkçe"</string>
+    <string name="add_time_button">"Saati Kur"</string>
+    <string name="add_this_loc">"Mevcut Lokasyon İçin Kur"</string>
+    <string name="add_loc">Lokasyonu Kur</string>
+    <string name="radio_loc">Konum Listesi</string>
+    <string name="radio_time">Saat Listesi</string>
+    <string name="list_empty">Liste Boş</string>
+    <string name="progressBar">Servisler Yükleniyor ... </string>
+    <string name="slogan">Sessizlik Sesiniz Olsun !</string>
+    <string name="title_home">Listeler</string>
+    <string name="title_dashboard">Saat Ayarlama</string>
+    <string name="title_notifications">Konum Ayarlama</string>
+    <string name="current_loc">Şuanki Konum</string>
+    <string name="manuel_loc">Elle Gir</string>
+    <string name="title">Konum Başlığı</string>
+    <string name="longtitude">Boylam Değeri</string>
+    <string name="latitude">Enlem Değeri</string>
+    <string name="settings">Ayarlar</string>
+
+
+</resources>
