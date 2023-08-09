@@ -46,8 +46,8 @@ class SettingsMain : AppCompatActivity() {
 
 
 
-        var isLocal =  prefences.getBoolean("location",true)
-        var isTime =prefences.getBoolean("time", true)
+        var isLocal =  prefences.getBoolean("location",false)
+        var isTime =prefences.getBoolean("time", false)
 
 
 

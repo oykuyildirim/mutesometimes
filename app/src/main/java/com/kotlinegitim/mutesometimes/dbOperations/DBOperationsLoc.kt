@@ -1,6 +1,7 @@
 package com.kotlinegitim.mutesometimes.dbOperations
 
 import android.app.Activity
+import android.provider.Settings.Global.getString
 import android.widget.ListView
 import android.widget.Toast
 import com.kotlinegitim.mutesometimes.customadaptors.LocationCustomAdaptor
@@ -27,7 +28,7 @@ class DBOperationsLoc {
 
                 act.runOnUiThread {
                     println(e.message.toString())
-                    Toast.makeText(act,"Same location is avaiable on list", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(act,act.getString(R.string.sameloc), Toast.LENGTH_SHORT).show()
                 }
 
 

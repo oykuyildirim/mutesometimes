@@ -100,12 +100,12 @@ class TimeSetFragment : Fragment() {
 
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("Delete")
+        builder.setTitle(getString(R.string.active2))
 
-        builder.setMessage("Do you want to activate ?")
+        builder.setMessage(getString(R.string.active))
         builder.setIcon(android.R.drawable.ic_dialog_alert)
 
-        builder.setPositiveButton("Yes"){dialogInterface, which ->
+        builder.setPositiveButton(getString(R.string.Yes)){dialogInterface, which ->
 
             var loc = MuteClock(
                 null,
@@ -119,7 +119,7 @@ class TimeSetFragment : Fragment() {
         }
 
 
-        builder.setNegativeButton("No"){dialogInterface, which ->
+        builder.setNegativeButton(getString(R.string.No)){dialogInterface, which ->
 
             var loc = MuteClock(
                 null,

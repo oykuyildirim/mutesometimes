@@ -40,7 +40,13 @@ class MuteClockCustomAdaptor(val context: Activity, val resource: Int, val objec
 
         clock.text= mute.clock
 
-        switch.text = mute.title
+        if (mute.title.isNullOrEmpty()){
+
+            switch.text = context.getString(R.string.noTitle)
+        }
+        else {
+            switch.text = mute.title
+        }
 
         switch.setChecked(mute.active)
 
@@ -102,12 +108,12 @@ class MuteClockCustomAdaptor(val context: Activity, val resource: Int, val objec
 
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("Delete")
+        builder.setTitle(context.getString(R.string.delete))
 
-        builder.setMessage("Are you sure to delete?")
+        builder.setMessage(context.getString(R.string.sure))
         builder.setIcon(android.R.drawable.ic_dialog_alert)
 
-        builder.setPositiveButton("Yes"){dialogInterface, which ->
+        builder.setPositiveButton(context.getString(R.string.Yes)){dialogInterface, which ->
 
 
             android.os.Handler().postDelayed({
@@ -119,7 +125,7 @@ class MuteClockCustomAdaptor(val context: Activity, val resource: Int, val objec
 
         }
 
-        builder.setNegativeButton("No"){dialogInterface, which ->
+        builder.setNegativeButton(context.getString(R.string.No)){dialogInterface, which ->
 
         }
         val alertDialog: AlertDialog = builder.create()

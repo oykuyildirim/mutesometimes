@@ -34,7 +34,13 @@ class LocationCustomAdaptor(val context: Activity, val resource: Int, val object
 
         var loc = objects.get(position)
 
-        switch.text = loc.title
+        if (loc.title.isNullOrEmpty()){
+
+            switch.text = context.getString(R.string.noTitle)
+        }
+        else {
+            switch.text = loc.title
+        }
 
         switch.setChecked(loc.active)
 
@@ -118,12 +124,12 @@ class LocationCustomAdaptor(val context: Activity, val resource: Int, val object
 
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("Delete")
+        builder.setTitle(context.getString(R.string.delete))
 
-        builder.setMessage("Are you sure to delete?")
+        builder.setMessage(context.getString(R.string.sure))
         builder.setIcon(android.R.drawable.ic_dialog_alert)
 
-        builder.setPositiveButton("Yes"){dialogInterface, which ->
+        builder.setPositiveButton(context.getString(R.string.Yes)){dialogInterface, which ->
 
 
             android.os.Handler().postDelayed({
@@ -135,7 +141,7 @@ class LocationCustomAdaptor(val context: Activity, val resource: Int, val object
 
         }
 
-        builder.setNegativeButton("No"){dialogInterface, which ->
+        builder.setNegativeButton(context.getString(R.string.No)){dialogInterface, which ->
 
         }
         val alertDialog: AlertDialog = builder.create()

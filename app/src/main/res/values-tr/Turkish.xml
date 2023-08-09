@@ -18,10 +18,19 @@
     <string name="title_notifications">Konum Ayarlama</string>
     <string name="current_loc">Şuanki Konum</string>
     <string name="manuel_loc">Elle Gir</string>
-    <string name="title">Konum Başlığı</string>
+    <string name="title">Başlığı</string>
     <string name="longtitude">Boylam Değeri</string>
     <string name="latitude">Enlem Değeri</string>
     <string name="settings">Ayarlar</string>
+    <string name="delete">Sil</string>
+    <string name="sure">Silmek için emin misin ?</string>
+    <string name="Yes">Evet</string>
+    <string name="No">Hayır</string>
+    <string name="sameloc">Aynı konum mevcut</string>
+    <string name="sametime">Aynı saat mevcut</string>
+    <string name="active">Aktif etmek ister misin ?</string>
+    <string name="active2">Aktif Etme</string>
+    <string name="noTitle">Başlık Yok</string>
 
 
 </resources>

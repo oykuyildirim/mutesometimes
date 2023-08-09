@@ -18,10 +18,19 @@
     <string name="slogan">Let Silence be your voice !</string>
     <string name="current_loc">Current Location</string>
     <string name="manuel_loc">Enter Manuelly</string>
-    <string name="title">Location Title</string>
+    <string name="title">Title</string>
     <string name="longtitude">Longtitude Value</string>
     <string name="latitude">Latitude Value</string>
     <string name="settings">Settings</string>
+    <string name="noTitle">No Title</string>
+    <string name="delete">Delete</string>
+    <string name="sametime">Same time is avaiable</string>
+    <string name="sure">Are you sure to delete ?</string>
+    <string name="active">Do you want to active ?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="active2">Activating</string>
+    <string name="sameloc">Same location is avaiable</string>
 
 
     <string-array name="Languages">

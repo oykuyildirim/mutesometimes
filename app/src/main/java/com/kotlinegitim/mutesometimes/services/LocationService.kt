@@ -72,9 +72,6 @@ class LocationService:Service(), LocationListener {
         getLocation()
 
 
-
-
-
         if(obj2.count()!=0) {
 
             for(loc in obj2) {
@@ -164,7 +161,7 @@ class LocationService:Service(), LocationListener {
                 locationPermissionCode
             )
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)}
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 5f, this)}
         override fun onLocationChanged(location: Location) {
             val lat = location.latitude
             val long = location.longitude

@@ -1,10 +1,15 @@
 package com.kotlinegitim.mutesometimes.ui.home
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
@@ -14,8 +19,10 @@ import com.kotlinegitim.mutesometimes.customadaptors.MuteClockCustomAdaptor
 import com.kotlinegitim.mutesometimes.database.ClockDatabase
 import com.kotlinegitim.mutesometimes.database.LocationDatabase
 import com.kotlinegitim.mutesometimes.databinding.FragmentHomeBinding
+import com.kotlinegitim.mutesometimes.dbOperations.DBOperationsLoc
 import com.kotlinegitim.mutesometimes.models.Location
 import com.kotlinegitim.mutesometimes.models.MuteClock
+import com.kotlinegitim.mutesometimes.services.LocationService
 
 class HomeFragment : Fragment() {
 
@@ -72,9 +79,13 @@ class HomeFragment : Fragment() {
         radioGroup = root.findViewById(R.id.listradio)
 
 
+        CheckLocationRequest()
 
         loadTime(db)
-        loadLocation(db2)
+
+        android.os.Handler().postDelayed({
+            loadLocation(db2)
+        }, 1500)
 
 
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
@@ -85,6 +96,7 @@ class HomeFragment : Fragment() {
 
 
 
+                loadTime(db)
                 println("bu time")
                 locatedList.visibility = View.INVISIBLE
                 clockList.visibility=View.VISIBLE
@@ -96,8 +108,7 @@ class HomeFragment : Fragment() {
 
 
                 println("bu location")
-
-
+                loadLocation(db2)
                 locatedList.visibility = View.VISIBLE
                 clockList.visibility=View.INVISIBLE
             }
@@ -172,6 +183,32 @@ class HomeFragment : Fragment() {
         Thread(run).join()
 
     }
+
+    fun CheckLocationRequest(){
+
+
+        if (ActivityCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+            PackageManager.PERMISSION_GRANTED) {
+
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )) {
+
+
+
+            } else {
+
+
+                ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 100)
+
+            }
+        } else {
+
+
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

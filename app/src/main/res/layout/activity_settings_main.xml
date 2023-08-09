@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
     tools:context=".ui.LocationSet.LocationSetFragment">
 
     <Switch
@@ -13,6 +15,7 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:paddingLeft="10dp"
+        android:paddingBottom="30dp"
         android:paddingTop="30dp"
         android:paddingRight="10dp"
         android:text="@string/mute_time_dec" />

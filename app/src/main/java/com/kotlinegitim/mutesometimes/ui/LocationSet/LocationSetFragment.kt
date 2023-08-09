@@ -56,11 +56,6 @@ class LocationSetFragment : Fragment() {
         curRadio = root.findViewById(R.id.automatic)
         manRadio = root.findViewById(R.id.manuel)
 
-        /*title.hint = getString(R.string.title)
-        manuelBtn.setText(getString(R.string.manuel_loc))
-        locBtn.setText(getString(R.string.current_loc))*/
-
-
 
         val db2 = Room.databaseBuilder(
             requireContext(),
@@ -119,12 +114,12 @@ class LocationSetFragment : Fragment() {
 
         val builder = AlertDialog.Builder(context)
 
-        builder.setTitle("Delete")
+        builder.setTitle(getString(R.string.active2))
 
-        builder.setMessage("Do you want to activate ?")
+        builder.setMessage(getString(R.string.active))
         builder.setIcon(android.R.drawable.ic_dialog_alert)
 
-        builder.setPositiveButton("Yes"){dialogInterface, which ->
+        builder.setPositiveButton(getString(R.string.Yes)){dialogInterface, which ->
 
             var loc = Location(
                 null,
@@ -138,7 +133,7 @@ class LocationSetFragment : Fragment() {
         }
 
 
-        builder.setNegativeButton("No"){dialogInterface, which ->
+        builder.setNegativeButton(getString(R.string.No)){dialogInterface, which ->
 
             var loc = Location(
                 null,
@@ -207,114 +202,7 @@ class LocationSetFragment : Fragment() {
         manuelBtn.setText(getString(R.string.add_loc))
         super.onResume()
     }
-   /* fun getLocation(){
 
-        if (Ispermission()){
-
-
-            if (EnableLocation()){
-
-
-                if (ActivityCompat.checkSelfPermission(
-                        requireActivity(),
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                        requireActivity(),
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
-                ) {
-
-                    requestPermission()
-                    return
-                }
-                fused.lastLocation.addOnCompleteListener(requireActivity()){ task->
-
-                    val location:Location? = task.result
-
-                    if(location == null){
-
-
-                    }
-
-                    else{
-
-                        Toast.makeText(requireActivity(),"Location Succcess",Toast.LENGTH_SHORT).show()
-
-                        println("long:"+location.longitude)
-                        println("lat:"+location.latitude)
-                    }
-
-                }
-
-            }
-
-            else{
-
-                Toast.makeText(requireActivity(),"Location",Toast.LENGTH_SHORT).show()
-
-
-                val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-                startActivity(intent)
-            }
-
-
-        }
-        else{
-
-            requestPermission()
-
-        }
-    }
-
-    fun EnableLocation():Boolean{
-
-        val locationManager:LocationManager = requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager
-
-        return  locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)||
-                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
-    }
-
-
-    fun requestPermission(){
-
-        ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION),
-            PERMISSION_REQUEST)
-    }
-    fun Ispermission():Boolean{
-
-        if(ActivityCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION)==
-                PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
-
-            return true
-        }
-        return false
-    }
-
-    companion object{
-
-       var PERMISSION_REQUEST = 100
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-
-        if (requestCode == PERMISSION_REQUEST){
-
-            if (grantResults.isNotEmpty() && grantResults[0]== PackageManager.PERMISSION_GRANTED){
-
-                Toast.makeText(requireActivity(),"Granted",Toast.LENGTH_SHORT).show()
-            }
-
-            else{
-                Toast.makeText(requireActivity(),"Denied",Toast.LENGTH_SHORT).show()
-
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    }*/
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

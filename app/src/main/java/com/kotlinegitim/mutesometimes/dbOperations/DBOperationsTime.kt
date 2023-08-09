@@ -26,7 +26,7 @@ class DBOperationsTime {
 
                 act.runOnUiThread {
 
-                    Toast.makeText(act,"Same clock is avaiable on list", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(act,act.getString(R.string.sametime), Toast.LENGTH_SHORT).show()
 
                 }
 

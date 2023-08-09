@@ -1,9 +1,10 @@
 package com.kotlinegitim.mutesometimes.services
 
-import android.app.NotificationManager
-import android.app.Service
+import android.app.*
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.media.AudioManager
 import android.os.Build
 import android.os.Handler
@@ -11,6 +12,7 @@ import android.os.IBinder
 import android.os.Message
 import android.widget.Toast
 import androidx.room.Room
+import com.kotlinegitim.mutesometimes.R
 import com.kotlinegitim.mutesometimes.database.ClockDatabase
 import com.kotlinegitim.mutesometimes.SettingsMain
 import com.kotlinegitim.mutesometimes.models.MuteClock
@@ -23,6 +25,8 @@ class TimeService : Service(){
 
 
     var mHandler = Handler()
+
+
 
     companion object{
         var added = false
@@ -138,12 +142,12 @@ class TimeService : Service(){
 
     }
 
+
     fun getcurrentTime() : String{
 
         val sdf = SimpleDateFormat("HH:mm:ss")
         var currentDateAndTime = sdf.format(Date())
 
-        currentDateAndTime = currentDateAndTime.dropLast(2)+"00"
 
         return currentDateAndTime
     }
